@@ -56,7 +56,7 @@ export default function Home() {
 
       <div className='flex flex-col pt-1 px-3'>
         <Headline text={`Pomodoro`} />
-        <Caption text={`${message}`}/>
+        <Caption text={message}/>
       </div>
 
       <Divider />
