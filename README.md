@@ -6,9 +6,11 @@ Bem-vindo ao repositório oficial do Super Pomodoro App, onde o tempo voa e a pr
 
 ## ✨ O Que Faz Nosso Pomodoro Brilhar?
 
-- **Simples, mas Poderoso:** Fácil de usar, difícil de largar. Nosso design intuitivo significa que você pode começar a ser produtivo com apenas um clique.
-- **Personalização ao Máximo:** Quer um ciclo mais longo com pausas curtas? Ou talvez você seja um fã de longas pausas? Configure seu pomodoro do SEU jeito.
-- **Notificações Divertidas:** Esqueça os alarmes chatos. Nossas notificações vão fazer você sorrir (e voltar ao trabalho).
+- 🚀 **Simples, mas Poderoso:** Fácil de usar e difícil de largar. Com nosso design intuitivo você começar a ser produtivo em um clique.
+
+- 💻 **Multi-plataforma:** Disponível para OSX e Windows!
+
+- 🔔 **Notificações Divertidas:** Esqueça os alarmes chatos. Nossas notificações vão fazer você sorrir (e voltar ao trabalho).
 
 </br>
 
@@ -16,7 +18,7 @@ Bem-vindo ao repositório oficial do Super Pomodoro App, onde o tempo voa e a pr
 
 Estamos cozinhando algumas funcionalidades incríveis em nosso laboratório de inovação. Aqui está o que você pode esperar em breve:
 
-- 🍎 **Multi-plataforma**: No momento o aplicativo está disponível apenas para OSX.
+- 🍅 **Personalização dos ciclos**: Quer um ciclo mais longo com pausas curtas? Ou talvez você seja um fã de longas pausas? Configure seu pomodoro do SEU jeito.
 - 📊 **Estatísticas e Insights**: Veja quanto você realmente trabalhou (ou procrastinou).
 
 </br>
