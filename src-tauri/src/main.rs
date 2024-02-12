@@ -4,6 +4,8 @@
 use dotenv::dotenv;
 use tauri_plugin_positioner::{Position, WindowExt};
 use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu};
+
+#[cfg(target_os = "macos")]
 use window_vibrancy::{apply_vibrancy, NSVisualEffectMaterial, NSVisualEffectState};
 
 mod commands;
@@ -34,23 +36,26 @@ fn main() {
   
   tauri::Builder::default()
     .plugin(tauri_plugin_positioner::init())
-    .system_tray(SystemTray::new().with_menu(tray_menu).with_title("Pomodoro"))
+    .system_tray(SystemTray::new().with_menu(tray_menu))
     .setup(|app| {
+      #[cfg(target_os = "macos")]
       app.set_activation_policy(tauri::ActivationPolicy::Accessory);
 
       app.listen_global("quit", | _ | {
         std::process::exit(0);
       });
 
-      let window = app.get_window("main").unwrap();
-
       #[cfg(target_os = "macos")]
-      apply_vibrancy(
-        &window, 
-        NSVisualEffectMaterial::Popover, 
-        Some(NSVisualEffectState::Active), 
-        Some(6.0)
-      ).expect("Unsupported platform! 'apply_vibrancy' is only supported on macOS");
+      {
+        let window = app.get_window("main").unwrap();
+
+        apply_vibrancy(
+          &window, 
+          NSVisualEffectMaterial::Popover, 
+          Some(NSVisualEffectState::Active), 
+          Some(6.0)
+        ).expect("Unsupported platform! 'apply_vibrancy' is only supported on macOS");
+      }
 
       Ok(())
     })

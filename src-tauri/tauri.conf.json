@@ -12,7 +12,9 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false
+      "notification": {
+        "all": true	
+      }
     },
     "bundle": {
       "active": true,
@@ -29,7 +31,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.pomodoro.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -73,7 +75,7 @@
       }
     ],
     "systemTray": {
-      "iconPath": "icons/pomodoro.png",
+      "iconPath": "icons/icon.png",
       "iconAsTemplate": true,
       "menuOnLeftClick": false
     }
