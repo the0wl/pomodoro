@@ -8,24 +8,6 @@ use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu
 #[cfg(target_os = "macos")]
 use window_vibrancy::{apply_vibrancy, NSVisualEffectMaterial, NSVisualEffectState};
 
-mod commands;
-mod utils;
-
-#[tauri::command]
-async fn pomodoro_start(app: tauri::AppHandle) {
-  commands::pomodoro::start(1, app).await;
-}
-
-#[tauri::command]
-async fn pomodoro_pause() {
-  commands::pomodoro::pause().await;
-} 
-
-#[tauri::command]
-fn pomodoro_reset() {
-  commands::pomodoro::reset()
-}
-
 fn main() {
   dotenv().ok();
 
@@ -36,7 +18,7 @@ fn main() {
   
   tauri::Builder::default()
     .plugin(tauri_plugin_positioner::init())
-    .system_tray(SystemTray::new().with_menu(tray_menu))
+    .system_tray(SystemTray::new().with_menu(tray_menu).with_tooltip("Pomodoro"))
     .setup(|app| {
       #[cfg(target_os = "macos")]
       app.set_activation_policy(tauri::ActivationPolicy::Accessory);
@@ -89,11 +71,6 @@ fn main() {
         _ => {}
       };
     })
-    .invoke_handler(tauri::generate_handler![
-      pomodoro_start,
-      pomodoro_pause,
-      pomodoro_reset
-    ])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
